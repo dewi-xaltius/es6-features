@@ -71,3 +71,10 @@ select {
     color: black; /* Blue palette color */
     margin-top: 20px;
 }
+
+/* Exercise 4 */
+#destructuringResult {
+    font-size: 2em;
+    color: #1d3557; /* Blue palette color */
+    margin-top: 20px;
+}

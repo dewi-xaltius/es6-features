@@ -95,3 +95,44 @@ document.getElementById('bookEventBtn').addEventListener('click', () => {
         document.getElementById('eventResult').innerText = 'Please enter your name to book an event.'; // Handle empty name input
     }
 });
+
+// Exercise 4
+// Arrow function to destructure user details from an object
+const showUserDetails = ({ name, age, email }) => {
+    return `User Name: ${name}, Age: ${age}, Email: ${email}`;
+};
+
+// Arrow function to destructure product details from an array
+const showProductDetails = ([productName, price, quantity]) => {
+    return `Product: ${productName}, Price: $${price}, Quantity: ${quantity}`;
+};
+
+// Event listener for showing user details
+document.getElementById('showUserDetailsBtn').addEventListener('click', () => {
+    const userName = document.getElementById('destructUserName').value;
+    const userAge = document.getElementById('destructUserAge').value;
+    const userEmail = document.getElementById('destructUserEmail').value;
+    
+    // Create an object representing the user
+    const user = { name: userName, age: userAge, email: userEmail };
+    
+    if (userName && userAge && userEmail) {
+        const userDetailsMessage = showUserDetails(user); // Destructure and display user details
+        document.getElementById('destructuringResult').innerText = userDetailsMessage;
+    } else {
+        document.getElementById('destructuringResult').innerText = 'Please fill in all user details.';
+    }
+});
+
+// Event listener for showing product details
+document.getElementById('showProductDetailsBtn').addEventListener('click', () => {
+    const productString = document.getElementById('productDetails').value;
+    
+    if (productString) {
+        const productArray = productString.split(','); // Split the string into an array
+        const productDetailsMessage = showProductDetails(productArray); // Destructure and display product details
+        document.getElementById('destructuringResult').innerText = productDetailsMessage;
+    } else {
+        document.getElementById('destructuringResult').innerText = 'Please enter product details in the correct format.';
+    }
+});
