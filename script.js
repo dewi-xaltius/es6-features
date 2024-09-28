@@ -136,3 +136,54 @@ document.getElementById('showProductDetailsBtn').addEventListener('click', () =>
         document.getElementById('destructuringResult').innerText = 'Please enter product details in the correct format.';
     }
 });
+
+// Exercise 5
+// Product inventory array
+const productsInventory = [
+    { name: 'Laptop', price: 1200, stock: 5 },
+    { name: 'Phone', price: 800, stock: 0 },
+    { name: 'Tablet', price: 600, stock: 8 },
+    { name: 'Monitor', price: 300, stock: 3 },
+    { name: 'Headphones', price: 150, stock: 10 }
+];
+
+// 1. Using map() to get product names
+document.getElementById('mapProductsBtn').addEventListener('click', () => {
+    const productNames = productsInventory.map(product => product.name); // Extract names
+    document.getElementById('arrayMethodsResult').innerText = `Product Names: ${productNames.join(', ')}`;
+});
+
+// 2. Using filter() to find in-stock products
+document.getElementById('filterProductsBtn').addEventListener('click', () => {
+    const inStockProducts = productsInventory.filter(product => product.stock > 0); // Products with stock > 0
+    const inStockNames = inStockProducts.map(product => product.name);
+    document.getElementById('arrayMethodsResult').innerText = `In-Stock Products: ${inStockNames.join(', ')}`;
+});
+
+// 3. Using reduce() to calculate the total value of all products in stock
+document.getElementById('reduceTotalValueBtn').addEventListener('click', () => {
+    const totalValue = productsInventory.reduce((total, product) => {
+        return total + (product.price * product.stock); // price * stock for each product
+    }, 0); // Initial value of total is 0
+    document.getElementById('arrayMethodsResult').innerText = `Total Inventory Value: $${totalValue}`;
+});
+
+// 4. Using find() to find the first product with price greater than 500
+document.getElementById('findExpensiveProductBtn').addEventListener('click', () => {
+    const expensiveProduct = productsInventory.find(product => product.price > 500); // First product with price > 500
+    if (expensiveProduct) {
+        document.getElementById('arrayMethodsResult').innerText = `First Expensive Product: ${expensiveProduct.name}, Price: $${expensiveProduct.price}`;
+    } else {
+        document.getElementById('arrayMethodsResult').innerText = 'No product found with price greater than $500';
+    }
+});
+
+// 5. Using forEach() to display all products and their details
+document.getElementById('forEachProductBtn').addEventListener('click', () => {
+    let productDetails = 'All Products: ';
+    productsInventory.forEach(product => {
+        productDetails += `${product.name} - Price: $${product.price}, Stock: ${product.stock}; `;
+    });
+    document.getElementById('arrayMethodsResult').innerText = productDetails;
+});
+

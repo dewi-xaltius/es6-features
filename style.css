@@ -78,3 +78,12 @@ select {
     color: #1d3557; /* Blue palette color */
     margin-top: 20px;
 }
+
+/* Exercise 5 */
+/* Styling for the result */
+#arrayMethodsResult {
+    font-size: 1.2em;
+    color: #00b4d8; /* Blue palette color */
+    margin-top: 20px;
+    border-style: solid;
+}
