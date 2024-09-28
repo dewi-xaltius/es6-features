@@ -148,10 +148,17 @@ const productsInventory = [
 ];
 
 // 1. Using map() to get product names
+// document.getElementById('mapProductsBtn').addEventListener('click', () => {
+//     const productNames = productsInventory.map(product => product.name); // Extract names
+//     document.getElementById('arrayMethodsResult').innerText = `Product Names: ${productNames.join(', ')}`;
+// });
+
+// 1. Using map() to display product names as buttons
 document.getElementById('mapProductsBtn').addEventListener('click', () => {
-    const productNames = productsInventory.map(product => product.name); // Extract names
-    document.getElementById('arrayMethodsResult').innerText = `Product Names: ${productNames.join(', ')}`;
+    const productNames = productsInventory.map(product => `<button class="product-btn">${product.name}</button>`); // Create button for each product
+    document.getElementById('arrayMethodsResult').innerHTML = productNames.join(' '); // Display buttons
 });
+
 
 // 2. Using filter() to find in-stock products
 document.getElementById('filterProductsBtn').addEventListener('click', () => {

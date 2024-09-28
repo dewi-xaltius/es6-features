@@ -87,6 +87,22 @@ select {
     margin-top: 20px;
 }
 
+/* Show product name in button */
+/* Styling for dynamically generated product buttons */
+.product-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #00b4d8; /* Blue palette color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    display: inline-block;
+}
+
+
+/* forEach */
 /* Flexbox container for the product table */
 .product-table {
     display: flex;
