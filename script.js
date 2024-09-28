@@ -179,11 +179,33 @@ document.getElementById('findExpensiveProductBtn').addEventListener('click', () 
 });
 
 // 5. Using forEach() to display all products and their details
+//document.getElementById('forEachProductBtn').addEventListener('click', () => {
+//    let productDetails = 'All Products: ';
+//    productsInventory.forEach(product => {
+//        productDetails += `${product.name} - Price: $${product.price}, Stock: ${product.stock}; `;
+//    });
+//    document.getElementById('arrayMethodsResult').innerText = productDetails;
+// });
+
+// 5. Using forEach() to display all products in a table-like structure
 document.getElementById('forEachProductBtn').addEventListener('click', () => {
-    let productDetails = 'All Products: ';
+    let productDetails = `<div class="product-table">
+                            <div class="product-header">
+                                <div class="product-column">Product Name</div>
+                                <div class="product-column">Price</div>
+                                <div class="product-column">Stock</div>
+                            </div>`; // Header for the product table
+
     productsInventory.forEach(product => {
-        productDetails += `${product.name} - Price: $${product.price}, Stock: ${product.stock}; `;
+        productDetails += `<div class="product-row">
+                              <div class="product-column">${product.name}</div>
+                              <div class="product-column">$${product.price}</div>
+                              <div class="product-column">${product.stock}</div>
+                           </div>`;
     });
-    document.getElementById('arrayMethodsResult').innerText = productDetails;
+
+    productDetails += '</div>'; // Close the table div
+    document.getElementById('arrayMethodsResult').innerHTML = productDetails; // Insert HTML structure
 });
+
 

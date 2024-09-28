@@ -83,7 +83,41 @@ select {
 /* Styling for the result */
 #arrayMethodsResult {
     font-size: 1.2em;
-    color: #00b4d8; /* Blue palette color */
+    color: black; 
     margin-top: 20px;
-    border-style: solid;
+}
+
+/* Flexbox container for the product table */
+.product-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Flexbox container for each product row */
+.product-row, .product-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #00b4d8;
+}
+
+/* Styling for individual product columns */
+.product-column {
+    flex: 1;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Header row styling */
+.product-header {
+    background-color: #00b4d8; /* Blue palette color */
+    color: white;
+    font-weight: bold;
+}
+
+/* Row hover effect for better visibility */
+.product-row:hover {
+    background-color: #f0f8ff; /* Light blue hover effect */
 }
