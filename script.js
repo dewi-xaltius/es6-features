@@ -71,3 +71,27 @@ document.getElementById('productInfoBtn').addEventListener('click', () => {
         document.getElementById('templateResult').innerText = 'Please enter both your name and a product.'; // Handle empty input
     }
 });
+
+// Exercise 3
+// Arrow function to handle event booking with default parameter for eventType
+const bookEvent = (userName, eventType = 'General Admission') => {
+    return `${userName}, you have successfully booked the ${eventType} event.`;
+};
+
+// Function to get the values from input fields and dropdown
+const getEventDetails = () => {
+    const userName = document.getElementById('eventUserName').value; // Get the user's name
+    const eventType = document.getElementById('eventType').value; // Get the selected event
+    return { userName, eventType };
+};
+
+// Event listener for the booking button
+document.getElementById('bookEventBtn').addEventListener('click', () => {
+    const { userName, eventType } = getEventDetails(); // Get user and event details
+    if (userName) {
+        const bookingMessage = bookEvent(userName, eventType || undefined); // Call the booking function
+        document.getElementById('eventResult').innerText = bookingMessage; // Display the booking result
+    } else {
+        document.getElementById('eventResult').innerText = 'Please enter your name to book an event.'; // Handle empty name input
+    }
+});

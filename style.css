@@ -53,3 +53,21 @@ input {
     color: #0077b6; /* Blue palette color */
     margin-top: 20px;
 }
+
+/* Exercise 3 */
+/* Styling for the select dropdown */
+select {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1em;
+    border: 2px solid #00b4d8; /* Blue border */
+    border-radius: 5px;
+    width: 220px;
+}
+
+/* Styling for the result */
+#eventResult {
+    font-size: 1.2em;
+    color: black; /* Blue palette color */
+    margin-top: 20px;
+}
