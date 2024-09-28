@@ -41,3 +41,33 @@ document.getElementById('divideBtn').addEventListener('click', () => {
     const result = divide(number1, number2); // Perform division
     document.getElementById('result').innerText = `Result: ${result}`;
 });
+
+// Exercise 2
+// Function to greet the user using template literals
+const greetUser = (userName) => `Hello, ${userName}! Welcome to our website.`;
+
+// Function to display product info using template literals
+const showProductInfo = (userName, productName) => `${userName}, you've selected the product: ${productName}. It's a great choice!`;
+
+// Event listener for greeting the user
+document.getElementById('greetUserBtn').addEventListener('click', () => {
+    const userName = document.getElementById('userName').value; // Get the user's name
+    if (userName) {
+        const greeting = greetUser(userName); // Call the greeting function
+        document.getElementById('templateResult').innerText = greeting; // Display the greeting
+    } else {
+        document.getElementById('templateResult').innerText = 'Please enter your name.'; // Handle empty input
+    }
+});
+
+// Event listener for displaying product information
+document.getElementById('productInfoBtn').addEventListener('click', () => {
+    const userName = document.getElementById('userName').value; // Get the user's name
+    const productName = document.getElementById('productName').value; // Get the product's name
+    if (userName && productName) {
+        const productMessage = showProductInfo(userName, productName); // Call the product info function
+        document.getElementById('templateResult').innerText = productMessage; // Display the product info
+    } else {
+        document.getElementById('templateResult').innerText = 'Please enter both your name and a product.'; // Handle empty input
+    }
+});

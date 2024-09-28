@@ -45,3 +45,11 @@ input {
     color: #00b4d8; /* Blue palette color */
     margin-top: 20px;
 }
+
+/* Exercise 2 */
+/* Styling for the result */
+#templateResult {
+    font-size: 1.2em;
+    color: #0077b6; /* Blue palette color */
+    margin-top: 20px;
+}
